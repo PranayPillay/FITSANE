@@ -1,0 +1,6 @@
+ <div class="Contact"><a
+            href="https://wa.me/919028505377?text=Hello%20I%20am%20interested%20in%20your%20fitness%20plans"
+            target="_blank"
+            style="text-decoration: none; background-color: #25D366; color: white; padding: 10px 20px; border-radius: 5px; font-size: 16px;">
+            Contact Us on WhatsApp
+        </a></div>

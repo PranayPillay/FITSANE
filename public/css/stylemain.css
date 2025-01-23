@@ -1,0 +1,513 @@
+body {
+    font-family:'Popins',sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg,#ab04fe,black);
+}
+
+#backg {
+position: fixed;
+z-index: -1;
+width: 100%;
+height: 100vh;
+object-fit: cover; 
+top: 0; 
+left: 0; 
+}
+
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+    height:70px;
+}
+
+.navbar-brand, .navbar-nav > li > a {
+    color: white !important;
+}
+
+.navbar-inverse {
+    background-color: rgba(0, 0, 0, 0.8);
+    border: none;
+}
+
+.navbar-inverse .navbar-toggle {
+    background-color: #cc66ff;
+}
+
+header {
+    
+    text-align: center;
+    font-weight: bolder;
+    font-size: xx-large;
+    padding: 20px 0;
+    background: rgba(0, 0, 0, 0.7); /* Adds contrast against the background */
+    position: sticky; /* Keeps it visible at the top */
+    top: 0;
+    z-index: 1000;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.85);
+    text-align: center;
+    color: white;
+    padding: 20px;
+    margin: 10px;
+    position: relative;
+    height: 100%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    
+}
+.workout::before , .workout::after{
+    content: '';
+    position: absolute;
+    left: -3px;
+    top: -3px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 10px;
+    background: linear-gradient(45deg,#e6fb04,#ff6600,#00ff66,#00ffff,#ff00ff,#ff0099,#6e0dd0,#ff3300,#099fff);
+    background-size: 400%;
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    z-index: -1;
+    animation: animate 20s linear infinite;
+}
+@keyframes animate
+{
+    0%{
+        background-position: 0 0;
+    }
+    50%{
+        background-position: 400% 0;
+    }
+    100%{
+        background-position:0 0;
+    }
+}
+
+.workout::after
+{
+    filter: blur(40px);
+    opacity: 0.1;
+}
+
+.nutrition::before , .nutrition::after{
+    content: '';
+    position: absolute;
+    left: -3px;
+    top: -3px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 10px;
+    background: linear-gradient(45deg,yellow,orange,pink,purple,red,green,blue);
+    background-size: 400%;
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    z-index: -1;
+    animation: animate 20s linear infinite;
+}
+@keyframes animate
+{
+    0%{
+        background-position: 0 0;
+    }
+    50%{
+        background-position: 400% 0;
+    }
+    100%{
+        background-position:0 0;
+    }
+}
+
+.nutrition::after
+{
+    filter: blur(40px);
+    opacity: 0.1;
+}
+
+.rdi::before , .rdi::after{
+    content: '';
+    position: absolute;
+    left: -3px;
+    top: -3px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 10px;
+    background: linear-gradient(45deg,yellow,orange,pink,purple,red,green,blue);
+    background-size: 400%;
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    z-index: -1;
+    animation: animate 20s linear infinite;
+}
+@keyframes animate
+{
+    0%{
+        background-position: 0 0;
+    }
+    50%{
+        background-position: 400% 0;
+    }
+    100%{
+        background-position:0 0;
+    }
+}
+
+.rdi::after
+{
+    filter: blur(40px);
+    opacity: 0.1;
+}
+
+.card img {
+    opacity: 0.9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    border-radius: 10px;
+}
+
+.card label {
+    font-weight: bold;
+    font-size: larger;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.card button {
+    font-size: 16px;
+    background-color: #cc66ff;
+    border: none;
+    color: white;
+    height: 60px;
+    width:200px;
+    border-radius: 50px;
+    margin: 10px auto;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background-color: #cc66ff;
+}
+
+.card .content {
+    text-align: left;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Force equal height cards */
+.card {
+    min-height: 400px; /* Adjust this height as needed */
+}
+
+.Contact
+{
+padding-top:500px;
+left: 10px;
+}
+.cool-button {
+    background: linear-gradient(45deg, #cc66ff,#cc66ff,#cc66ff);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px 30px;
+    margin-top: 50px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    text-align: center;
+}
+.markbutton {
+display: flex;
+justify-content: center; 
+align-items: center; 
+margin-top: 20px; 
+}
+
+.homework {
+    background: linear-gradient(45deg, #cc66ff,#cc66ff,#cc66ff);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px 30px;
+    margin-top: 50px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.gbutton {
+    background: linear-gradient(45deg, #cc66ff,#cc66ff,#cc66ff);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px 30px;
+    margin-top: 50px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.calbutton{
+    background: linear-gradient(45deg, #cc66ff,#cc66ff,#cc66ff);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px 30px;
+    margin-top: 50px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.homework:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+.homework:active {
+    transform: translateY(2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.gbutton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+.gbutton:active {
+    transform: translateY(2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.calbutton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+.calbutton:active {
+    transform: translateY(2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.cool-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+.cool-button:active {
+    transform: translateY(2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.bmicontain
+{ 
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+    background-size: cover;
+}
+.container1{
+    
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 300px;
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    background: transparent;
+    backdrop-filter: blur(50px);
+    padding: 2rem;
+    padding-top: 100px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    
+}
+.adjust
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 0 20px;
+}
+
+.form-label
+{
+    margin-right: 10px;
+    flex: 1;
+    text-align: left;
+}
+.form-control {
+    flex: 2;
+    padding: 5px;
+}
+
+#b {
+    background: linear-gradient(45deg, #cc66ff,#cc66ff,#cc66ff);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    text-align: center;
+    height: 40px;
+    margin: 0 auto;
+}
+
+#b:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+#b:active {
+    transform: translateY(2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#bcd{
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto 0;
+    width:150px;
+    justify-content: center;
+    
+}
+#textarea
+{
+    padding:30px;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+
+    
+}
+
+
+/* Responsive styling */
+@media (max-width: 992px) {
+    .card button {
+        width: 100%;
+    }
+
+    header {
+        font-size: large;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        font-size: medium;
+    }
+
+    .content {
+        font-size: 12px;
+    }
+
+    .card {
+        min-height: auto;
+    }
+}
+
+
+.userimg{
+    display: block;
+    margin:0 auto;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height:200px;
+   
+}
+
+.user{
+    height: fit-content;
+    
+}
+
+.welcome
+{
+    margin-top: 8px;
+    color: white;
+    text-align: center;
+    
+}
+
+.wave
+{
+height: 40px;
+width: 40px;
+align-self: start;
+}
+
+
+.container {
+    flex: 1;
+}
+
+footer {
+    background-color:black;
+    color: white;
+    
+    padding: 15px 0 ;
+    height: 250px;
+    width: 100%;/
+}
+
+.f1
+{
+    margin: 8px;
+    
+    
+;
+}

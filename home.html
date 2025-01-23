@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WELCOME TO FITSANE</title>
+    <link rel="stylesheet" href="/public/css/stylemain.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <!-- Background Image
+    <img src="bgg.jpg" alt="" id="backg"> -->
+
+    <!-- Navbar -->
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarResponsive">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">FITSANE</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#workout">Workout</a></li>
+                    <li><a href="#nutrition">Nutrition</a></li>
+                    <li><a href="#rest">Rest Day</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--nav close-->
+    <div class="user">
+        <img class="userimg" src="/public/images/boy.png">
+        <p class="welcome"><img class="wave" src="/public/images/wavinghand.png">welcome Pranay</p></img>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container" style="margin-top: 70px;">
+        <div class="row">
+            <!-- Workout Section -->
+            <div class="col-lg-4 col-md-6 col-sm-12" id="firstdiv">
+                <div class="card workout">
+                    <label>Workout</label>
+                    <img src="/public/images/image1.jpg" alt="Workout Background">
+                    <button class="homework">Home Workout</button>
+                    <button class="gbutton">Gym</button>
+                    <button class="calbutton">Calisthenics</button>
+                </div>
+            </div>
+
+            <!-- Nutrition Section -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card nutrition" id="nutrition">
+                    <label>Nutrition</label>
+                    <img src="/public/images/nbg.jpg" alt="Nutrition Background">
+                    <div class="content">
+                        <p>
+                            Fuel Your Body, Elevate Your Life<br>
+                            Nutrition is the foundation of health and vitality. Eating the right balance of nutrients
+                            keeps your body strong, your mind sharp, and your energy levels high.
+                            <br><br>
+                            <strong>How to Stay on Track:</strong><br>
+                            - Eat a Rainbow: Include colorful fruits and vegetables in every meal.<br>
+                            - Balance Your Plate: Combine proteins, healthy fats, and complex carbohydrates.<br>
+                            - Stay Hydrated: Drink plenty of water throughout the day.<br>
+                            - Practice Moderation: Enjoy treats occasionally while focusing on whole, unprocessed
+                            foods.<br>
+                            - Be Consistent: Small, daily habits lead to significant, lasting changes.
+                        </p>
+                        <a href="diet.html" style="color: #cc66ff;">Get your meal.</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rest Day Instructions Section -->
+            <div class="col-lg-4 col-md-12 col-sm-12">
+                <div class="card rdi" id="rest">
+                    <label>Rest Day Instructions</label>
+                    <img src="/public/images/restbg.jpg" alt="Rest Day Background">
+                    <div class="content">
+                        <p>
+                            Rest Day: Recharge Without Slowing Down<br>
+                            Rest days are essential for recovery, but they don’t mean you have to stay idle. Staying
+                            active on your rest day helps boost circulation, reduce muscle soreness, and maintain your
+                            momentum without overexerting your body.
+                            <br><br>
+                            <strong>Tips:</strong><br>
+                            - Do light stretching or yoga.<br>
+                            - Take a walk to stay active.<br>
+                            - Practice mindfulness or meditation.<br>
+                            - Focus on hydration and recovery nutrition.
+                        </p>
+                    </div>
+                </div>
+            </div><!--rest day over-->
+        </div><!--rows over-->
+        <!--mark button-->
+        <div class="markbutton"><button class="cool-button">Mark as Done</button></div>
+        <div class="bmicontain">
+            <div class="container1">
+                <div class="adjust">
+                    <label for="height" class="form-label">height</label>
+                    <input type="text" class="form-control" id="height">
+                </div>
+                <div class="adjust">
+                    <label for="weight" class="form-label">weight</label>
+                    <input type="text" class="form-control" id="weight">
+                </div>
+                <div class="adjust">
+                    <label for="Age" class="form-label">Age</label>
+                    <input type="text" class="form-control" id="Age">
+                </div>
+                <button class="btn btn-primary" id="b" onclick="bmi()">Submit</button>
+                <div id="textarea">
+                    <label id="bcd"></label>
+                </div>
+            </div>
+        </div><!--bmi contain-->
+    </div><!--main content over-->
+
+
+    <footer>
+
+        <label class="f1">about us</label><br>
+        <label class="f1">Contact us</label><br>
+        <label class="f1">know us</label><br>
+        <label class="f1">connect</label><br>
+
+    </footer>
+    <!-- bmi section-->
+
+    <!--bmi section over-->
+
+
+    <!--bmi script-->
+    <script src="/public/js/script.js"></script>
+    <!--bmi script over-->
+
+    <!--whatsapp section-->
+
+    <!--whatsapp section over-->
+
+
+
+
+</body>
+
+</html>
