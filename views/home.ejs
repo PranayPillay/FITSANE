@@ -17,7 +17,7 @@
 
     <!-- Navbar -->
 
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse navbar-static-top">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarResponsive">
@@ -25,19 +25,20 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">FITSANE</a>
+                <a class="navbar-brand" href="#" id="fitsane">FITSANE</a>
             </div>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#workout">Workout</a></li>
-                    <li><a href="#nutrition">Nutrition</a></li>
-                    <li><a href="#rest">Rest Day</a></li>
+                    <li class="barcontent"><a href="#">Home</a></li>
+                    <li class="barcontent"><a href="#workout">Workout</a></li>
+                    <li class="barcontent"><a href="#nutrition">Nutrition</a></li>
+                    <li class="barcontent"><a href="#rest">Rest Day</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 <!--nav close-->
+
     <div class="user">
         <img class="userimg" src="/images/boy.png">
         <p class="welcome"><img class="wave" src="/images/wavinghand.png">welcome <%=username%></p></img>
@@ -140,7 +141,23 @@
 
     <!--bmi section over-->
 
-
+    <script>
+        
+        let male="male";
+        let female="female";
+        const image=document.querySelector(".userimg");
+    if(<%=Gender%>=="female")
+    {
+        
+        image.src="/images/femaleuser.png";
+    }
+    else{
+        console.log("gender is male");
+    }
+    
+    
+    
+    </script>
     <!--bmi script-->
     <script src="/js/script.js"></script>
     <!--bmi script over-->

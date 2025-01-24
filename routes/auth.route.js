@@ -5,16 +5,17 @@ const ejs=require('ejs');
 
 router.post('/register', (req, res, next) => {
     console.log("register route");
-    const { name, Age, password, Email } = req.body;
-    let data = new regi({ name, Age, password, Email })
+    const { name, Age,Gender, password, Email } = req.body;
+    let data = new regi({ name, Age,Gender, password, Email })
     data.save();
     const username=(`${name}`);
     console.log(username);
     console.log(`name is ${name}`);
     console.log(`age is ${Age}`);
+    console.log(`gender is ${Gender}`);
     console.log(`password is ${password}`);
     console.log(`email is ${Email}`);
-    res.render('home',{username:username});
+    res.render('home',{username:username,Gender:Gender});
     
 })
 

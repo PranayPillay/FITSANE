@@ -512,3 +512,14 @@ footer {
     
 ;
 }
+
+
+.barcontent:hover{
+    transform: translateY(2px);
+   background: #cc66ff;
+}
+
+#fitsane:hover{
+    transform: translateY(2px);
+   background: black;
+}

@@ -2,6 +2,7 @@ const mongoose=require('mongoose');
 const register=new mongoose.Schema({
     name:String,
     Age:Number,
+    Gender:String,
     password:Number,
     Email:String
 
