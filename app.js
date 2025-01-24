@@ -17,10 +17,16 @@ app.set('view engine', 'ejs');
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-app.get('/', (req, res) => {
-    res.render('register');
+app.get('/', (req, res) =>
+     {
+    res.render('landing');
+    
 });
 
+app.get('/register',(req,res)=>
+{
+    res.render('register');
+})
 app.use('/auth',AuthRouter);
 
 

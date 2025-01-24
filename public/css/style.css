@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('/images/bgd.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+}
+.navbar-brand {
+    font-weight: bold;
+}
+.header-content {
+    text-align: left;
+    margin-top: 15%;
+    margin-left: 10%;
+    animation: fadeIn 2s ease-in-out;
+}
+.header-content h1 {
+    font-size: 4em;
+    animation: slideInLeft 2s ease-out;
+}
+.header-content h3 {
+    font-size: 2em;
+    margin-top: 10px;
+    animation: slideInLeft 2.5s ease-out;
+}
+.btn {
+    position: relative;
+    margin-top: 30px;
+    font-size: 20px;
+    padding: 10px 30px;
+    background: linear-gradient(45deg, #cc66ff, #9966ff);
+    border: none;
+    color: white;
+    border-radius: 30px;
+    left:50%;
+    text-decoration: none;
+    animation: bounceIn 3s ease-in-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.benefits-section {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-radius: 10px;
+    margin-top: 50px;
+    animation: fadeInUp 2s ease-in-out;
+}
+.benefits-section h4 {
+    margin-bottom: 20px;
+}
+.benefits-section p {
+    font-size: 1.1em;
+}
+.btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
