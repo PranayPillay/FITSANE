@@ -1,0 +1,154 @@
+body{
+    
+    background:url("/images/bg1.jpg");
+}
+
+
+.navbar ul li
+{
+    font-size:medium;
+
+    text-align: center;
+
+}
+
+.navbar ul{
+    display: flex;
+    align-items: center;
+    
+    list-style: none;
+}
+
+.navbar{
+    align-content: center;
+    mix-blend-mode:hard-light;
+    border-radius: 50px;
+    inset: 0 0 0 0;
+    background:antiquewhite; 
+    height:60px;
+    width: 100%;
+   
+    
+}
+
+.logoimg
+{
+    inset:0 0 0 0;
+    display: flex;
+    margin: auto;
+    width: 400px;
+    height: 400px;
+    
+}
+
+
+.homeworkout
+{  
+    border-radius: 50px;
+    mix-blend-mode: lighten;
+    padding: 25px;
+    inset: 0 0 0 0;
+    display: flex;
+    margin: auto;
+    width: 600px;
+    height: 350px;
+    /*box-shadow: -10px 10px 20px skyblue,10px -10px 20px skyblue,-10px 10px 20px skyblue,-10px -10px 20px skyblue,10px 10px 20px skyblue;*/
+}
+
+.homeworkout:hover{
+    border: 2px solid white;
+    transform: translateY(2px);
+}
+
+.hdesc
+{   
+    
+    padding-top: 30px;
+    inset: 0 0 0 0;
+    margin: auto;
+    display: flex;
+    color: white;
+    font-size: larger;
+    width: 800px;
+    height: 30vh;
+    
+    
+    
+}
+
+
+.home{
+    align-content: center;
+    
+    
+}
+
+footer {
+    mix-blend-mode: hard-light;
+    background: antiquewhite;
+    color:gray;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.social-media a {
+    color: grey;
+    margin: 0 10px;
+    text-decoration: none;
+    
+}
+
+
+.h:hover{
+    transform: translatey(2px);
+    border:2 solid rgb(32, 184, 44);
+   
+    
+}
+
+
+.a:hover{
+    transform: translatey(2px);
+    border:2 solid rgb(32, 184, 44);
+}
+
+
+.c:hover{
+    transform: translatey(2px);
+    border:2 solid rgb(32, 184, 44);
+}
+
+
+.title
+{
+    padding-top: 10px;
+   text-align: center;
+ 
+    color: antiquewhite;
+    font-size: larger;
+}
+
+
+.menu{
+    height:25px;
+    width:35px;
+    margin-left: 1145px;
+   
+    
+    
+}
+
+.menu:hover{
+    transform: translateY(3px);
+}
+
+.a{
+    margin-left: 50px;
+}
+
+
+.c
+{
+    margin-left: 50px;
+}
+

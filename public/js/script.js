@@ -8,6 +8,6 @@ function bmi() {
         ge = document.getElementById('Age').value;
         num3 = parseInt(ge);
         result = 10 * num1 + 6.25 * num - (5 * num3) + 5;
-        document.getElementById("textarea").innerHTML = "your BMI is : " + result;
+        document.getElementById("textarea").innerHTML = "your maintanance calories is : " + result;
     });
 }

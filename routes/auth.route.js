@@ -15,7 +15,7 @@ router.post('/register', (req, res, next) => {
     console.log(`gender is ${Gender}`);
     console.log(`password is ${password}`);
     console.log(`email is ${Email}`);
-    res.render('home',{username:username,Gender:Gender});
+    res.render('index',{username:username,Gender:Gender});
     
 })
 

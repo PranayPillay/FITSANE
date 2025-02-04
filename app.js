@@ -23,11 +23,18 @@ app.get('/', (req, res) =>
     
 });
 
+
+
 app.get('/register',(req,res)=>
 {
     res.render('register');
 })
 app.use('/auth',AuthRouter);
+
+app.get('/homeworkout',(req,res)=>
+    {
+        res.render('workout');
+    })
 
 
 app.use(async(req, res,next) => {

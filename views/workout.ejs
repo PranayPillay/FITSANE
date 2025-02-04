@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Column Layout</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            background: url('images/Land.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        /* .warm-up-sec
+        {
+            margin-top: 60px; ;
+            color:rgba(1, 10, 15, 0.543);
+            background-color: rgb(243, 152, 32);
+            border-radius: 30px;
+            box-shadow:0 4px 6px rgb(223, 223, 223);
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-right:1000px;
+            margin-left: 200px;
+            text-align: center;
+            align-self:0px; 
+            
+            
+        }
+         */
+        .video-container {
+            margin-bottom: 20px;
+            margin-top: 80px;
+        }
+
+        video {
+            width: 100%; 
+            height: 50% ; 
+            border-radius: 15px; 
+            box-shadow: 0 4px 6px rgb(219, 18, 95); 
+        }
+
+        .video-title {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10px;
+            color: azure;
+            background-color: orange;
+            border-radius: 40px;
+            margin-left: 300px;
+            margin-right: 50px;
+            box-shadow: 0 4px 6px rgb(255, 7, 218);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarResponsive">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">FITSANE</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#workout">Workout</a></li>
+                    <li><a href="#nutrition">Nutrition</a></li>
+                    <li><a href="#rest">Rest Day</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<!-- <div class="warm-up-sec">
+        <h1>homeworkout</h1>
+</div>       -->
+<div class="row">
+  <div class="col-md-4 col-sm-6 video-container">
+                <video src="/videos/warmup.mp4" controls></video>
+                <div class="video-title">warm up</div>
+            </div>
+            <div class="col-md-4 col-sm-6 video-container">
+                <video src="/videos/skipping.mp4" controls></video>
+                <div class="video-title">skip</div>
+            </div>
+
+            <!-- Video 5 -->
+            <div class="col-md-4 col-sm-6 video-container">
+                <video src="/videos/running.mp4" controls></video>
+                <div class="video-title">running</div>
+            </div>
+       
+
+            <div class="col-md-4 col-sm-6 video-container">
+                <video src="/videos/squats.mp4" controls></video>
+                <div class="video-title">squats</div>
+            </div>
+
+            
+            <div class="col-md-4 col-sm-6 video-container">
+                <video src="/videos/plank (2).mp4" controls></video>
+                <div class="video-title">plank</div>
+            </div>
+
+            
+            <div class="col-md-4 col-sm-6 video-container">
+                <video src="/videos/pushup.mp4" controls></video>
+                <div class="video-title">push ups</div>
+            </div>
+</div>
+        
+           
+</body>
+</html>
