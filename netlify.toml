@@ -1,0 +1,26 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+
+[functions]
+  directory = "functions/"
+
+
+[dev]
+  command = "npm run dev"
+  port = 8888
+  publish = "dist"
