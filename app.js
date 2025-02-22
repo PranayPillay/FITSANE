@@ -33,9 +33,44 @@ app.use('/auth',AuthRouter);
 
 app.get('/homeworkout',(req,res)=>
     {
-        res.render('workout');
+        
+        res.render("workout");
+        
     })
 
+app.get('/calisthenics',(req,res)=>
+{
+    res.render("cal");
+}
+)
+
+app.get('/gym',(req,res)=>
+{
+    res.render("gymworkout");
+})
+
+
+
+app.get('/ectomorph',(req,res)=>
+{
+    res.render("ectomorph");
+})   
+
+app.get("/mesomorph",(req,res)=>
+{
+    res.render("mesomorph");
+})
+
+app.get("/endomorph",(req,res)=>
+{
+    res.render("endomorph");
+})
+
+
+app.get("/bmi",(req,res)=>
+{
+    res.render("bmi");
+})
 
 app.use(async(req, res,next) => {
     next(createrror.NotFound("url not found or invalid url"));

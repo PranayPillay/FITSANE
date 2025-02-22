@@ -1,0 +1,117 @@
+body
+{
+    background: url("/images/bg1.jpg");
+    
+  
+}
+
+
+.navbar ul li
+{
+    font-size:medium;
+
+    text-align: center;
+
+}
+
+.navbar ul{
+    display: flex;
+    align-items: center;
+    
+    list-style: none;
+}
+
+.navbar{
+    align-content: center;
+    mix-blend-mode:hard-light;
+    border-radius: 50px;
+    inset: 0 0 0 0;
+    background:antiquewhite; 
+    height:60px;
+    width: 100%;
+   
+    
+}
+
+
+.menu{
+    height:25px;
+    width:35px;
+    margin-left: 1145px;
+   
+    
+    
+}
+
+.menu:hover{
+    transform: translateY(3px);
+}
+
+.content
+{
+    
+    
+    color: white;
+    
+    
+    
+}
+
+
+.a{
+    margin-left: 50px;
+}
+
+
+.c
+{
+    margin-left: 50px;
+}
+
+.title{
+    text-align: center;
+    margin-top: 15px;
+}
+
+.meal{
+    border: 2px solid white;
+    margin: 30px;
+    border-radius: 15px;
+}
+
+.Mid-Morning{
+    border: 2px solid white;
+    margin: 30px;
+    border-radius: 15px;
+}
+
+.Lunch{
+    border: 2px solid white;
+    margin: 30px;
+    border-radius: 15px;
+}
+
+.Pre-Workout{
+    border: 2px solid white;
+    margin: 30px;
+    border-radius: 15px;
+}
+
+.Post-Workout{
+    border: 2px solid white;
+    margin: 30px;
+    border-radius: 15px;
+}
+
+.Dinner{
+    border: 2px solid white;
+    margin: 30px;
+    border-radius: 15px;
+}
+
+
+.Bedtime{
+    border: 2px solid white;
+    margin: 30px;
+    border-radius: 15px;
+}

@@ -6,6 +6,7 @@ body{
 
 .navbar ul li
 {
+    cursor: pointer;
     font-size:medium;
 
     text-align: center;
@@ -89,6 +90,7 @@ footer {
     color:gray;
     text-align: center;
     padding: 20px 0;
+    margin-top: 500px;
 }
 
 .social-media a {
@@ -150,5 +152,117 @@ footer {
 .c
 {
     margin-left: 50px;
+}
+
+#burger-menu {
+    position: relative;
+    cursor: pointer;
+  }
+
+  #menu-options {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    display: none;
+    margin-left:1280px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 3;
+  }
+
+  #menu-options a {
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+    color: #333;
+  }
+
+  #nutrition-options {
+    display: none;
+    margin-left: 20px;
+  }
+
+  .body-type-link {
+    cursor: pointer;
+  }
+  
+
+
+.star1
+{
+    width: 50px;
+    height: 50px;
+}
+
+
+.consistency
+{
+   margin-top: 100px; 
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 25px; 
+
+}
+
+#one
+{
+    display: none;
+}
+
+#two
+{
+    display: none;
+}
+
+#three
+{
+    display: none;
+}
+
+#four
+{
+    display: none;
+}
+
+#five
+{
+    display: none;
+}
+
+#six
+{
+    display: none;
+}
+
+#seven
+{
+    display: none;
+}
+
+
+.markdone{
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+#markas
+{
+    width: 100px;
+    height: 50px;
+    border-radius: 30px;
+    background-color: antiquewhite;
+    cursor: pointer;
+}
+
+#markas:hover{
+    transform: translatey(3px);
+}
+#markas:active{
+    transform: translateY(3px);
 }
 

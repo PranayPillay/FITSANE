@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/prac1.css">
+    <title>Login Fitsane</title>
+</head>
+<body>
+    <div class="register-container">
+        <div class="box">
+            
+        <h2>Login</h2>
+            <div class="form-group">
+                <form action="/auth/login" method="post">            
+            <div class="form-group">
+                <label for="Email">Email</label>
+            </div>
+                <input type="email" id="Email" name="Email" placeholder="Enter your email" required>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                </div>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            
+            <button class="register-btn">Login</button>
+        </form>
+        <p>dont have an account? <a href="register.ejs">register</a></p>
+    </div>
+</div>
+</body>
+</html>

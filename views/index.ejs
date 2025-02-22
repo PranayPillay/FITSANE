@@ -16,9 +16,20 @@
         <li class="h">home</li>
         <li class="a">about us</li>
         <li class="c">contact us</li>    
-        <img src="/images/menus.png" class="menu"/>    
+        <img src="/images/menus.png" class="menu" id="burger-menu"/>    
     </ul>
-    
+    <div id="menu-options">
+    <a href="#">About Us</a>
+  <a href="#">Contact</a>
+  <a href="#" id="nutrition-link">Nutrition</a>
+  <div id="nutrition-options">
+    <a href="/ectomorph" class="body-type-link" data-body-type="ectomorph">Ectomorph</a>
+    <a href="/mesomorph" class="body-type-link" data-body-type="mesomorph">Mesomorph</a>
+    <a href="/endomorph" class="body-type-link" data-body-type="endomorph">Endomorph</a>
+  </div>
+  <a href="/bmi">Maintenance Calorie Calculator</a>
+  <a href="#">Reviews</a>
+</div>
 </div>
 <div data-aos="fade-down">
 <div class="logo">
@@ -31,8 +42,8 @@
 
 <div data-aos="fade-up">
 <div class="home">
-     
-<img src="/images/homeworkout2.jpg" alt="homeworkout" class="homeworkout">
+    <a href="/homeworkout">   
+<img src="/images/homeworkout2.jpg" alt="homeworkout" class="homeworkout"></a>
 <div data-aos="zoom-out-down">
     <div class="title">Home Workouts </div>
 <div class="hdesc">Home workouts offer a convenient, flexible, and cost-effective way to achieve your fitness goals.  By eliminating gym commutes and fees, they save you time and money, allowing you to exercise in the privacy and comfort of your own space, whenever it suits your schedule. This personalized approach makes fitness more accessible and easier to integrate into busy lifestyles, promoting consistent exercise habits, reducing stress, and improving overall health and well-being for individuals of all fitness levels</div>
@@ -43,7 +54,8 @@
 <div data-aos="fade-up">
     
 <div class="home">
-<img src="/images/calis.jpg" alt="calisthenics" class="homeworkout">
+  <a href="/calisthenics">
+<img src="/images/calis.jpg" alt="calisthenics" class="homeworkout"></a>
 <div data-aos="flip-left"
      data-aos-easing="ease-out-cubic"
      data-aos-duration="2000">
@@ -55,7 +67,8 @@
 
 <div data-aos="fade-up">
 <div class="home">
-    <img src="/images/gym.jpg" alt="homeworkout" class="homeworkout">
+  <a href="/gym">
+    <img src="/images/gym.jpg" alt="homeworkout" class="homeworkout"></a>
     <div data-aos="fade-up"
      data-aos-duration="1000">
      <div class="title">Gym workouts </div>
@@ -64,6 +77,17 @@
     </div>
 </div>
 </div>
+
+<div class="consistency">
+  <img src="/images/star.png" alt="" class="star1" id="one">
+  <img src="/images/star.png" alt="" class="star1" id="two">
+  <img src="/images/star.png" alt="" class="star1" id="three">
+  <img src="/images/star.png" alt="" class="star1" id="four">
+  <img src="/images/star.png" alt="" class="star1" id="five">
+  <img src="/images/star.png" alt="" class="star1" id="six">
+  <img src="/images/star.png" alt="" class="star1" id="seven">
+</div>
+<div class="markdone"><button id="markas">mark as done</button></div>
 
 
 
@@ -80,6 +104,88 @@
     </footer>
 </div>
     </div>
+    <script>
+      let count=0;
+      o=document.getElementById("one")
+      t=document.getElementById("two")
+      th=document.getElementById("three")
+      f=document.getElementById("four")
+      fi=document.getElementById("five")
+      six=document.getElementById("six")
+      seven=document.getElementById("seven")
+      document.getElementById("markas").addEventListener('click',()=>{
+        count++;
+        if(count==1)
+      {
+        o.style.display="block";
+      }
+      else if(count==2)
+      {
+        t.style.display="block";
+      }
+
+      else if(count==3)
+      {
+        th.style.display="block";
+      }
+
+      else if(count==4)
+      {
+        f.style.display="block";
+      }
+
+      else if(count==5)
+      {
+        fi.style.display="block";
+      }
+
+      else if(count==6)
+      {
+        six.style.display="block";
+      }
+
+      else if(count==7)
+      {
+        seven.style.display="block";
+      }
+      
+    })
+    
+  
+  </script>
+    <script>
+        const burgerMenu = document.getElementById('burger-menu');
+        const menuOptions = document.getElementById('menu-options');
+        const nutritionLink = document.getElementById('nutrition-link');
+        const nutritionOptions = document.getElementById('nutrition-options');
+        const bodyTypeLinks = document.querySelectorAll('.body-type-link');
+      
+        // Initialize menu as hidden (important!)
+        menuOptions.style.display = 'none';
+        nutritionOptions.style.display = 'none';
+      
+      
+        burgerMenu.addEventListener('click', () => {
+          menuOptions.style.display = (menuOptions.style.display === 'block') ? 'none' : 'block';
+        });
+      
+        nutritionLink.addEventListener('click', (event) => {
+          event.preventDefault();
+          nutritionOptions.style.display = (nutritionOptions.style.display === 'block') ? 'none' : 'block';
+        });
+      
+        
+      
+        window.addEventListener('click', (event) => {
+          if (!burgerMenu.contains(event.target) && !menuOptions.contains(event.target)) {
+            menuOptions.style.display = 'none';
+            nutritionOptions.style.display = 'none';
+          }
+        });
+      
+      </script>
+     
+
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
