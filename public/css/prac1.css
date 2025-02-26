@@ -1,5 +1,7 @@
 body{
-    background: url("/images/regibg.jpg");
+    
+    background: black;
+   
     background-size: cover;
     background-position: center;
 }
@@ -16,7 +18,7 @@ body{
 
 .box{
     
-    background: url("/images/regibg.jpg");
+    background: black;
     background-size: cover;
     background-position: center;
     inset: 0 0 0 0;
@@ -28,13 +30,13 @@ body{
     margin-top:125px;
     border-radius: 30px;
     color: white;
+    border-color: goldenrod;
+    box-shadow:
 }
 
 
 h2{
-    
     text-align: center;
-    
 }
 
 
@@ -50,7 +52,7 @@ input{
     margin-bottom: 10px;
     border-radius: 8px;
     height: 30px;
-    width: 200px;
+    width: 190px;
    
 }
 
@@ -58,22 +60,85 @@ input{
     
     width: 170px;
     margin: auto;
-    
 }
 
 
 .register-btn
 {
-
-    margin:auto;
+    margin-top: 25px;
     display: flex;
+    justify-self: center;
+    height: 30px;
+    width: 100px;
+    border-radius: 10px;
+    background-color:gold;
+    justify-content: center;
+    padding: 6px;
+    cursor: pointer;
+    
+    
+    
 }
+
+
+.register-btn:hover
+{
+    transform: translatey(3px);
+}
+
+
 
 p{
     text-align: center;
 }
 
-a
+a{
+    color: white;
+}
+
+
+.logo
 {
     color: white;
+}
+
+#f
+{
+    color: goldenrod;
+}
+
+
+.box::before , .box::after{
+    content: '';
+    position: absolute;
+    left: -3px;
+    top: -3px;
+    right: -2px;
+    bottom: -2px;
+    border-radius:30px;
+    background: linear-gradient(45deg,goldenrod,white,black);
+    background-size: 400%;
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    z-index: -2;
+    animation: animate 20s linear infinite;
+    
+}
+@keyframes animate
+{
+    0%{
+        background-position: 0 0;
+    }
+    50%{
+        background-position: 400% 0;
+    }
+    100%{
+        background-position:0 0;
+    }
+}
+
+.box::after
+{
+    filter: blur(40px);
+    opacity: 0.1;
 }
