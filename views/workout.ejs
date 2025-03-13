@@ -14,34 +14,20 @@
             background: url('images/Land.jpg') no-repeat center center fixed;
             background-size: cover;
         }
-        /* .warm-up-sec
-        {
-            margin-top: 60px; ;
-            color:rgba(1, 10, 15, 0.543);
-            background-color: rgb(243, 152, 32);
-            border-radius: 30px;
-            box-shadow:0 4px 6px rgb(223, 223, 223);
-            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin-right:1000px;
-            margin-left: 200px;
-            text-align: center;
-            align-self:0px; 
-            
-            
-        }
-         */
         .video-container {
             margin-bottom: 20px;
-            margin-top: 80px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
         }
-
+        .video-container:hover {
+            transform: scale(1.05);
+        }
         video {
-            width: 100%; 
-            height: 50% ; 
-            border-radius: 15px; 
-            box-shadow: 0 4px 6px rgb(219, 18, 95); 
+            width: 100%;
+            max-width: 600px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgb(219, 18, 95);
         }
-
         .video-title {
             font-size: 18px;
             font-weight: bold;
@@ -50,11 +36,38 @@
             color: azure;
             background-color: orange;
             border-radius: 40px;
-            margin-left: 300px;
-            margin-right: 50px;
+            padding: 5px;
             box-shadow: 0 4px 6px rgb(255, 7, 218);
+            display: inline-block;
+        }
+        .controls-container {
+            margin-top: 10px;
+        }
+        button {
+            background-color: #ff5733;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #c70039;
         }
     </style>
+    <script>
+        function togglePlayPause(id, button) {
+            var video = document.getElementById(id);
+            if (video.paused) {
+                video.play();
+                button.textContent = "Pause";
+            } else {
+                video.pause();
+                button.textContent = "Play";
+            }
+        }
+    </script>
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -77,45 +90,58 @@
             </div>
         </div>
     </nav>
-
-<!-- <div class="warm-up-sec">
-        <h1>homeworkout</h1>
-</div>       -->
-<div class="row">
-  <div class="col-md-4 col-sm-6 video-container">
-                <video src="/videos/warmup.mp4" controls></video>
-                <div class="video-title">warm up</div>
+    
+    <div class="container" style="margin-top: 80px;">
+        <div class="row">
+            <div class="col-md-12 video-container">
+                <video id="video1" src="/videos/warmup.mp4"></video>
+                <div class="video-title">Warm Up</div>
+                <div class="controls-container">
+                    <button onclick="togglePlayPause('video1', this)">Play</button>
+                    <input type="checkbox"> Done
+                </div>
             </div>
-            <div class="col-md-4 col-sm-6 video-container">
-                <video src="/videos/skipping.mp4" controls></video>
-                <div class="video-title">skip</div>
+            <div class="col-md-12 video-container">
+                <video id="video2" src="/videos/skipping.mp4"></video>
+                <div class="video-title">Skipping</div>
+                <div class="controls-container">
+                    <button onclick="togglePlayPause('video2', this)">Play</button>
+                    <input type="checkbox"> Done
+                </div>
             </div>
-
-            <!-- Video 5 -->
-            <div class="col-md-4 col-sm-6 video-container">
-                <video src="/videos/running.mp4" controls></video>
-                <div class="video-title">running</div>
+            <div class="col-md-12 video-container">
+                <video id="video3" src="/videos/running.mp4"></video>
+                <div class="video-title">Running</div>
+                <div class="controls-container">
+                    <button onclick="togglePlayPause('video3', this)">Play</button>
+                    <input type="checkbox"> Done
+                </div>
             </div>
-       
-
-            <div class="col-md-4 col-sm-6 video-container">
-                <video src="/videos/squats.mp4" controls></video>
-                <div class="video-title">squats</div>
+            <div class="col-md-12 video-container">
+                <video id="video4" src="/videos/squats.mp4"></video>
+                <div class="video-title">Squats</div>
+                <div class="controls-container">
+                    <button onclick="togglePlayPause('video4', this)">Play</button>
+                    <input type="checkbox"> Done
+                </div>
             </div>
-
-            
-            <div class="col-md-4 col-sm-6 video-container">
-                <video src="/videos/plank (2).mp4" controls></video>
-                <div class="video-title">plank</div>
+            <div class="col-md-12 video-container">
+                <video id="video5" src="/videos/plank (2).mp4"></video>
+                <div class="video-title">Plank</div>
+                <div class="controls-container">
+                    <button onclick="togglePlayPause('video5', this)">Play</button>
+                    <input type="checkbox"> Done
+                </div>
             </div>
-
-            
-            <div class="col-md-4 col-sm-6 video-container">
-                <video src="/videos/pushup.mp4" controls></video>
-                <div class="video-title">push ups</div>
+            <div class="col-md-12 video-container">
+                <video id="video6" src="/videos/pushup.mp4"></video>
+                <div class="video-title">Push Ups</div>
+                <div class="controls-container">
+                    <button onclick="togglePlayPause('video6', this)">Play</button>
+                    <input type="checkbox"> Done
+                </div>
             </div>
-</div>
-        
-           
+        </div>
+    </div>
 </body>
 </html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews</title>
+    <style>
+        body { 
+            background:url("/images/bg1.jpg");
+            font-family: Arial, sans-serif; 
+            margin: 20px; 
+        }
+        .review-container { 
+            max-width: 600px;
+            margin: auto; 
+        }
+        .review-box {
+            background:url("/images/bg1.jpg");
+            mix-blend-mode:hard-light;
+            border: 2px solid antiquewhite;
+            padding: 60px;
+            border-radius: 20px;
+            margin-top: 10%;
+            text-align: center;
+        }
+        .review-form {
+            margin-top: 20px;
+            border-radius: 5px; 
+            height: 200px;
+        }
+        textarea{
+            width: 100%; 
+            margin-top: 10px; 
+            padding: 1%;
+            
+        }
+        .submit{
+            background-color: rgba(200, 69, 9, 0.882);  
+            color: aliceblue;
+            font-size: 100%;
+            height: 60px;
+            width: 120px;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            border-radius: 20px;
+        }
+
+        .submit:hover{
+            transform: translateY(3px);
+        }
+
+
+
+        .logo {
+            margin-left: 35%;
+            height: 30%;
+            width: 30%;
+        }
+        .cen
+        {
+            text-align:left;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="review-container" id="container">
+        <div class="review-box">
+            
+            <form action="/auth/Reviews/" method="POST">
+                <div class="cen"><h3><input type="text" name="Email" id="Email" class="Email" placeholder="enter your email"></h3></div>
+                <textarea class="review-form" placeholder="Your Review" id="desc" name="desc" required></textarea>
+                <button class="submit" type="submit" id="bb">Submit Review</button>
+            </form>  
+        </div>
+    </div>
+
+    <script>
+        aaa=document.getElementById("container")
+        aaa.style.display='block';
+        document.getElementById("bb").addEventListener('click',()=>
+    {
+          aaa.style.display='none'; 
+          alert("review submited successfully"); 
+    });
+
+    </script>
+</body>
+</html>

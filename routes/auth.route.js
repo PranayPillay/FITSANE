@@ -5,6 +5,7 @@ const userrev=require('../models/reviews.js');
 const createrror=require('http-errors');
 const ejs=require('ejs');
 
+
 router.post('/register', async(req, res, next) => {
     console.log("register route");
     try{
@@ -23,6 +24,7 @@ router.post('/register', async(req, res, next) => {
     console.log(`password is ${password}`);
     console.log(`email is ${Email}`);
     res.render('login',{username:username,Gender:Gender});
+    
 }
 catch(error)
 {
@@ -35,7 +37,10 @@ router.post('/login', async(req, res, next) => {
     const {Email,password}=req.body;
     const exists=await regi.findOne({Email:Email,password:password});
     if(exists){
-    res.render('index');
+        
+    res.render('index',{Email:exists.Email});
+    console.log(`${Email}`)
+    
     }
     else
 {
@@ -53,8 +58,15 @@ router.delete('/logout', (req, res, next) => {
 })
 
 
-router.post('/reviews',(req,res)=>
-{
+router.post('/Reviews',async(req, res, next) => {
+   
     
+   
+   
+    const {Email,desc}=req.body;
+    let urev = new userrev({Email,desc});
+    const savedrev=await urev.save();
+    res.render('index')
+
 })
 module.exports = router;

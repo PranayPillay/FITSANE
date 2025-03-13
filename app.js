@@ -72,6 +72,11 @@ app.get("/bmi",(req,res)=>
     res.render("bmi");
 })
 
+app.get("/reviews",(req,res)=>
+{
+    res.render("reviews")
+})
+
 app.use(async(req, res,next) => {
     next(createrror.NotFound("url not found or invalid url"));
 
