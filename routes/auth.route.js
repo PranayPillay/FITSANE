@@ -12,8 +12,16 @@ router.post('/register', async(req, res, next) => {
     const { name, Age,Gender, password, Email } = req.body;
     if(!Email || !password)throw createrror.BadRequest();
         const doesExist=await regi.findOne({Email:Email})
-    if(doesExist)throw createrror.Conflict(`${Email} already registered`)
-     let data = new regi({ name, Age,Gender, password, Email })
+    if(doesExist)
+    {
+        res.send(`
+            <script>
+                alert("Email already exists! Please use a different email.");
+                window.location.href = "/register";
+            </script>
+        `);
+    }
+     let data = new regi({ name, Age,Gender,password, Email })
     const saveduser=await data.save();
 
     const username=(`${name}`);
@@ -44,7 +52,12 @@ router.post('/login', async(req, res, next) => {
     }
     else
 {
-    throw createrror.BadRequest();
+    res.send(`
+        <script>
+            alert("invalid username or password");
+            window.location.href = "/fitsanelogin";
+        </script>
+    `);
 }
     
 })

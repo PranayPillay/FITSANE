@@ -3,7 +3,7 @@ const register=new mongoose.Schema({
     name:String,
     Age:Number,
     Gender:String,
-    password:Number,
+    password:String,
     Email:String
 
 })

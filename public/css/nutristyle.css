@@ -57,15 +57,29 @@ body
     
 }
 
+.anchor
+{
+    text-decoration: none;
+    color: inherit;
+}
+
+.h{
+   
+    cursor: pointer;
+}
 
 .a{
+    
     margin-left: 50px;
+    cursor: pointer;
 }
 
 
 .c
 {
+    
     margin-left: 50px;
+    cursor: pointer;
 }
 
 .title{
@@ -114,4 +128,24 @@ body
     border: 2px solid white;
     margin: 30px;
     border-radius: 15px;
+}
+
+
+.h:hover{
+    transform: translatey(2px);
+    border:2 solid rgb(32, 184, 44);
+   
+    
+}
+
+
+.a:hover{
+    transform: translatey(2px);
+    border:2 solid rgb(32, 184, 44);
+}
+
+
+.c:hover{
+    transform: translatey(2px);
+    border:2 solid rgb(32, 184, 44);
 }

@@ -165,17 +165,24 @@ footer {
     left: 0;
     display: none;
     margin-left:1280px;
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
+    background-color:antiquewhite;
+    border: 1px solid antiquewhite;
     padding: 10px;
     z-index: 3;
+    height: 50vh;
+    width: 200px;
+    border-radius: 30px;
   }
 
   #menu-options a {
     display: block;
-    padding: 5px;
+    padding: 10px;
     text-decoration: none;
     color: #333;
+  }
+
+  #menu-options a:hover{
+    transform: translatey(3px);
   }
 
   #nutrition-options {
@@ -264,6 +271,13 @@ footer {
 }
 #markas:active{
     transform: translateY(3px);
+}
+
+
+.anchor
+{
+    text-decoration: none;
+    color: inherit;
 }
 
 @media (max-width: 768px) {

@@ -38,6 +38,12 @@ app.get('/homeworkout',(req,res)=>
         
     })
 
+app.get('/home',(req,res)=>
+
+{
+    res.render('index')
+})
+
 app.get('/calisthenics',(req,res)=>
 {
     res.render("cal");
@@ -66,6 +72,15 @@ app.get("/endomorph",(req,res)=>
     res.render("endomorph");
 })
 
+app.get('/fitsanelogin',(req,res)=>
+    {
+         res.render('login')
+    })
+
+app.get('/fitsaneregister',(req,res)=>
+{
+    res.render('register')
+})    
 
 app.get("/bmi",(req,res)=>
 {
@@ -90,6 +105,8 @@ res.send({
     message: err.message
 })
 })
+
+
 
 app.listen(process.env.PORT, () => {
     console.log(`server is listening on port ${process.env.PORT}`);
