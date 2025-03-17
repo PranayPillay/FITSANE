@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router();
 const regi=require('../models/register.js');
 const userrev=require('../models/reviews.js');
+const loginn=require('../models/login.js');
 const createrror=require('http-errors');
 const ejs=require('ejs');
 
@@ -43,12 +44,15 @@ catch(error)
 router.post('/login', async(req, res, next) => {
     console.log("login route");
     const {Email,password}=req.body;
+    let date=new Date()
     const exists=await regi.findOne({Email:Email,password:password});
-    if(exists){
-        
-    res.render('index',{Email:exists.Email});
+    if(exists)
+    {
+    let userlogs=new loginn({Email,password,date})
+    const savelogin= userlogs.save();
+    res.render('index',{Email:exists.Email,Date:date});
     console.log(`${Email}`)
-    
+    console.log({Date:date})
     }
     else
 {

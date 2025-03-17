@@ -120,6 +120,12 @@ footer {
     border:2 solid rgb(32, 184, 44);
 }
 
+.anchor
+{
+    text-decoration: none;
+    color: inherit;
+}
+
 
 .title
 {
