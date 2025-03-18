@@ -111,7 +111,7 @@ app.get('/fitsaneregister',(req,res)=>
 
 app.get("/bmi",(req,res)=>
 {
-    res.render("bmi");
+    res.render("bmi",{Email:req.session.userEmail});
 })
 
 app.get("/reviews",(req,res)=>
