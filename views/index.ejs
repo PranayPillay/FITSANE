@@ -23,9 +23,9 @@
   <a href="https://wa.me/919028505377?text=Hello%20I%20am%20interested%20in%20your%20fitness%20plans">Contact</a>
   <a href="#" id="nutrition-link">Nutrition</a>
   <div id="nutrition-options">
-    <a href="/ectomorph" class="body-type-link" data-body-type="ectomorph">Ectomorph</a>
-    <a href="/mesomorph" class="body-type-link" data-body-type="mesomorph">Mesomorph</a>
-    <a href="/endomorph" class="body-type-link" data-body-type="endomorph">Endomorph</a>
+    <a href="/ectomorph/<%= Email %>" class="body-type-link" data-body-type="ectomorph">Ectomorph</a>
+    <a href="/mesomorph/<%= Email %>" class="body-type-link" data-body-type="mesomorph">Mesomorph</a>
+    <a href="/endomorph/<%= Email %>" class="body-type-link" data-body-type="endomorph">Endomorph</a>
   </div>
   <a href="/bmi">Maintenance Calorie Calculator</a>
   
@@ -106,54 +106,49 @@
 </div>
     </div>
     <script>
-      let count=0;
-      o=document.getElementById("one")
-      t=document.getElementById("two")
-      th=document.getElementById("three")
-      f=document.getElementById("four")
-      fi=document.getElementById("five")
-      six=document.getElementById("six")
-      seven=document.getElementById("seven")
-      document.getElementById("markas").addEventListener('click',()=>{
-        count++;
-        if(count==1)
-      {
-        o.style.display="block";
-      }
-      else if(count==2)
-      {
-        t.style.display="block";
-      }
-
-      else if(count==3)
-      {
-        th.style.display="block";
-      }
-
-      else if(count==4)
-      {
-        f.style.display="block";
-      }
-
-      else if(count==5)
-      {
-        fi.style.display="block";
-      }
-
-      else if(count==6)
-      {
-        six.style.display="block";
-      }
-
-      else if(count==7)
-      {
-        seven.style.display="block";
-      }
-      
-    })
-    
-  
+      const userEmail = "<%= Email %>";
   </script>
+  
+  <script>
+    const stars = [
+        document.getElementById("one"),
+        document.getElementById("two"),
+        document.getElementById("three"),
+        document.getElementById("four"),
+        document.getElementById("five"),
+        document.getElementById("six"),
+        document.getElementById("seven")
+    ];
+    
+    async function loadStars() {
+        const res = await fetch(`/progress/starcount/${userEmail}`);
+        const data = await res.json();
+        const count = data.count || 0;
+    
+        stars.forEach((star, index) => {
+            star.style.display = index < count ? "inline" : "none";
+        });
+    }
+    
+    document.getElementById("markas").addEventListener("click", async () => {
+        const res = await fetch('/progress/markdone', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: userEmail })
+        });
+    
+        const data = await res.json();
+        if (data.success) {
+            alert("Workout marked! Star added.");
+            loadStars();
+        } else {
+            alert(data.message);
+        }
+    });
+    
+    loadStars();
+    </script>
+    
     <script>
         const burgerMenu = document.getElementById('burger-menu');
         const menuOptions = document.getElementById('menu-options');

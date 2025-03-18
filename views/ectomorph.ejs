@@ -11,7 +11,7 @@
     <div class="container">
         <div class="navbar">
             <ul>
-                <li class="h"><a href="home" class="anchor">home</a></li>
+                <li class="h"><a href="/home/<%= Email %>" class="anchor">home</a></li>
                 <li class="a"><a href="home" class="anchor">about us</a></li>
                 <li class="c"><a href="https://wa.me/919028505377?text=Hello%20I%20am%20interested%20in%20your%20fitness%20plans" class="anchor">contact us</a></li>    
                 <img src="/images/menus.png" class="menu"/>    
@@ -88,5 +88,8 @@
 
     </div>
 </div>
+<script>
+const userEmail="<%= Email %>"
+</script>
 </body>
 </html>

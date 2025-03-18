@@ -7,6 +7,8 @@ const router=require('router');
 const ejs=require('ejs');
 const regi=require('./models/register.js');
 const path=require('path');
+const session = require('express-session');
+const ProgressRouter = require('./routes/progress.route.js');
 const AuthRouter=require('./routes/auth.route.js');
 const app = express();
 require('dotenv').config();
@@ -25,10 +27,21 @@ app.get('/', (req, res) =>
 
 
 
-app.get('/register',(req,res)=>
-{
-    res.render('register');
-})
+app.use(session({
+    secret: 'yourSuperSecretRandomKey123!@#',
+    resave: false,
+    saveUninitialized: true
+}));
+
+
+app.use('/progress', ProgressRouter);
+
+
+app.get('/register', (req, res) => {
+        res.render('register', { error: null, oldInput: {} });
+    });
+
+    
 app.use('/auth',AuthRouter);
 
 app.get('/homeworkout',(req,res)=>
@@ -38,10 +51,13 @@ app.get('/homeworkout',(req,res)=>
         
     })
 
-app.get('/home',(req,res)=>
+app.get('/home/:slug',(req,res)=>
 
 {
-    res.render('index')
+    const Email=req.session.userEmail
+    res.render('index',{Email:Email});
+    
+    
 })
 
 app.get('/calisthenics',(req,res)=>
@@ -57,18 +73,29 @@ app.get('/gym',(req,res)=>
 
 
 
-app.get('/ectomorph',(req,res)=>
+app.get('/ectomorph/:slug',(req,res)=>
 {
-    res.render("ectomorph");
+    const {Email}=req.params.slug
+    res.render("ectomorph",{Email:req.params.slug});
+    console.log(req.params.slug)
+    console.log(req.session.userEmail)
 })   
 
-app.get("/mesomorph",(req,res)=>
+app.get("/mesomorph/:slug",(req,res)=>
 {
+    const {Email}=req.params.slug
+    res.render("mesomorph",{Email:req.params.slug});
+    console.log(req.params.slug)
+    console.log(req.session.userEmail)
     res.render("mesomorph");
 })
 
-app.get("/endomorph",(req,res)=>
+app.get("/endomorph/:slug",(req,res)=>
 {
+    const {Email}=req.params.slug
+    res.render("endomorph",{Email:req.params.slug});
+    console.log(req.params.slug)
+    console.log(req.session.userEmail)
     res.render("endomorph");
 })
 

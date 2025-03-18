@@ -59,9 +59,13 @@ input{
 .form-group{
     
     width: 170px;
-    margin: auto;
+    margin-left:153px;
 }
 
+#wo
+{
+    margin-bottom: 5px;
+}
 
 .register-btn
 {
