@@ -44,10 +44,11 @@ app.get('/register', (req, res) => {
     
 app.use('/auth',AuthRouter);
 
-app.get('/homeworkout',(req,res)=>
+app.get('/homeworkout/:slug',(req,res)=>
     {
-        
-        res.render("workout");
+        const Email=req.params.slug;
+        res.render("workout",{Email:Email});
+        console.log(Email)
         
     })
 
@@ -60,15 +61,17 @@ app.get('/home/:slug',(req,res)=>
     
 })
 
-app.get('/calisthenics',(req,res)=>
+app.get('/calisthenics/:slug',(req,res)=>
 {
-    res.render("cal");
+    const Email=req.params.slug;
+    res.render("cal",{Email:Email});
 }
 )
 
-app.get('/gym',(req,res)=>
+app.get('/gym/:slug',(req,res)=>
 {
-    res.render("gymworkout");
+    const Email=req.params.slug;
+    res.render("gymworkout",{Email:Email});
 })
 
 

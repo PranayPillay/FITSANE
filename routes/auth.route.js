@@ -100,12 +100,22 @@ router.post('/Reviews',async(req, res, next) => {
    
     
    
-   
+    
     const {Email,desc}=req.body;
     let urev = new userrev({Email,desc});
     const savedrev=await urev.save();
-    res.render('index', { Email: exists.Email });
-
+    const rev={desc:desc}
+    if(savedrev)
+    {
+        res.send(`
+            <script>
+                alert("review submitted successfully");
+                window.location.href = "/home/${encodeURIComponent(Email)}";
+            </script>
+        `);
+        
+    }
+    console.log({Email})
 
 })
 module.exports = router;
