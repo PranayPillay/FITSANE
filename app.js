@@ -7,6 +7,7 @@ const router=require('router');
 const ejs=require('ejs');
 const regi=require('./models/register.js');
 const path=require('path');
+const VisitorCount = require('./models/visitorCount');
 const session = require('express-session');
 const ProgressRouter = require('./routes/progress.route.js');
 const AuthRouter=require('./routes/auth.route.js');
@@ -76,6 +77,24 @@ app.get('/gym/:slug',(req,res)=>
 
 
 
+
+app.use(async (req, res, next) => {
+    try {
+        let counter = await VisitorCount.findOne();
+        if (!counter) {
+            counter = new VisitorCount({ count: 1 });
+        } else {
+            counter.count += 1;
+        }
+        await counter.save();
+        console.log(`Total Visits: ${counter.count}`);
+    } catch (err) {
+        console.error("Visitor count error:", err);
+    }
+    next();
+});
+
+
 app.get('/ectomorph/:slug',(req,res)=>
 {
     const {Email}=req.params.slug
@@ -93,6 +112,12 @@ app.get("/mesomorph/:slug",(req,res)=>
     res.render("mesomorph");
 })
 
+app.get('/admin-registeration',async(req,res)=>
+    {
+        const visitorData = await VisitorCount.findOne();
+        res.render('adminregister',{ visitCount: visitorData ? visitorData.count : 0 })
+    })
+    
 app.get("/endomorph/:slug",(req,res)=>
 {
     const {Email}=req.params.slug
@@ -135,7 +160,6 @@ res.send({
     message: err.message
 })
 })
-
 
 
 app.listen(process.env.PORT, () => {

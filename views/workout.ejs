@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WORKOUT 1</title>
+    <title>home workout</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            background: url('images/Land.jpg') no-repeat center center fixed;
+            background: url('/images/Land.jpg') no-repeat center center fixed;
             background-size: cover;
         }
         .video-container {
@@ -43,20 +42,32 @@
         .controls-container {
             margin-top: 10px;
         }
-        button {
-            background-color: #ff5733;
+        .timer {
+            font-size: 16px;
+            margin-top: 5px;
+            color: white;
+            background-color: black;
+            padding: 5px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .btn-custom {
+            background-color: #ff7f50;
             color: white;
             border: none;
             padding: 10px 15px;
             border-radius: 5px;
-            transition: background-color 0.3s ease-in-out;
             cursor: pointer;
+            transition: background 0.3s;
+            margin: 5px;
         }
-        button:hover {
-            background-color: #c70039;
+        .btn-custom:hover {
+            background-color: #ff4500;
         }
     </style>
     <script>
+        var timers = {};
+        
         function togglePlayPause(id, button) {
             var video = document.getElementById(id);
             if (video.paused) {
@@ -67,26 +78,33 @@
                 button.textContent = "Play";
             }
         }
+
+        function startTimer(id) {
+            var timerSpan = document.getElementById(id + "-timer");
+            if (!timers[id]) {
+                timers[id] = { seconds: 0, interval: null };
+            }
+            if (!timers[id].interval) {
+                timers[id].interval = setInterval(function () {
+                    timers[id].seconds++;
+                    timerSpan.textContent = "Time: " + timers[id].seconds + "s";
+                }, 1000);
+            }
+        }
+
+        function stopTimer(id) {
+            if (timers[id] && timers[id].interval) {
+                clearInterval(timers[id].interval);
+                timers[id].interval = null;
+            }
+        }
     </script>
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarResponsive">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">FITSANE</a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="/home/<%= Email %>">Home</a></li>
-                    <li><a href="#workout">Workout</a></li>
-                    <li><a href="#nutrition">Nutrition</a></li>
-                    <li><a href="#rest">Rest Day</a></li>
-                </ul>
+                <a class="navbar-brand" href="/home/<%= Email %>">FITSANE</a>
             </div>
         </div>
     </nav>
@@ -97,49 +115,60 @@
                 <video id="video1" src="/videos/warmup.mp4"></video>
                 <div class="video-title">Warm Up</div>
                 <div class="controls-container">
-                    <button onclick="togglePlayPause('video1', this)">Play</button>
+                    <button class="btn-custom" onclick="togglePlayPause('video1', this)">Play</button>
+                    <button class="btn-custom" onclick="startTimer('video1')">Start Timer</button>
+                    <button class="btn-custom" onclick="stopTimer('video1')">Stop Timer</button>
                     <input type="checkbox"> Done
                 </div>
+                <span id="video1-timer" class="timer">Time: 0s</span>
             </div>
+            
             <div class="col-md-12 video-container">
-                <video id="video2" src="/videos/skipping.mp4"></video>
+                <video id="video2" src="/videos/plank.mp4"></video>
                 <div class="video-title">Skipping</div>
                 <div class="controls-container">
-                    <button onclick="togglePlayPause('video2', this)">Play</button>
+                    <button class="btn-custom" onclick="togglePlayPause('video2', this)">Play</button>
+                    <button class="btn-custom" onclick="startTimer('video2')">Start Timer</button>
+                    <button class="btn-custom" onclick="stopTimer('video2')">Stop Timer</button>
                     <input type="checkbox"> Done
                 </div>
+                <span id="video2-timer" class="timer">Time: 0s</span>
             </div>
+
             <div class="col-md-12 video-container">
-                <video id="video3" src="/videos/running.mp4"></video>
-                <div class="video-title">Running</div>
+                <video id="video4" src="/videos/pushup.mp4"></video>
+                <div class="video-title">Push-ups</div>
                 <div class="controls-container">
-                    <button onclick="togglePlayPause('video3', this)">Play</button>
+                    <button class="btn-custom" onclick="togglePlayPause('video4', this)">Play</button>
+                    <button class="btn-custom" onclick="startTimer('video4')">Start Timer</button>
+                    <button class="btn-custom" onclick="stopTimer('video4')">Stop Timer</button>
                     <input type="checkbox"> Done
                 </div>
+                <span id="video4-timer" class="timer">Time: 0s</span>
             </div>
+
             <div class="col-md-12 video-container">
-                <video id="video4" src="/videos/squats.mp4"></video>
+                <video id="video5" src="/videos/squats.mp4"></video>
                 <div class="video-title">Squats</div>
                 <div class="controls-container">
-                    <button onclick="togglePlayPause('video4', this)">Play</button>
+                    <button class="btn-custom" onclick="togglePlayPause('video5', this)">Play</button>
+                    <button class="btn-custom" onclick="startTimer('video5')">Start Timer</button>
+                    <button class="btn-custom" onclick="stopTimer('video5')">Stop Timer</button>
                     <input type="checkbox"> Done
                 </div>
+                <span id="video5-timer" class="timer">Time: 0s</span>
             </div>
+
             <div class="col-md-12 video-container">
-                <video id="video5" src="/videos/plank (2).mp4"></video>
-                <div class="video-title">Plank</div>
+                <video id="video6" src="/videos/skipping.mp4"></video>
+                <div class="video-title">skipping</div>
                 <div class="controls-container">
-                    <button onclick="togglePlayPause('video5', this)">Play</button>
+                    <button class="btn-custom" onclick="togglePlayPause('video6', this)">Play</button>
+                    <button class="btn-custom" onclick="startTimer('video6')">Start Timer</button>
+                    <button class="btn-custom" onclick="stopTimer('video6')">Stop Timer</button>
                     <input type="checkbox"> Done
                 </div>
-            </div>
-            <div class="col-md-12 video-container">
-                <video id="video6" src="/videos/pushup.mp4"></video>
-                <div class="video-title">Push Ups</div>
-                <div class="controls-container">
-                    <button onclick="togglePlayPause('video6', this)">Play</button>
-                    <input type="checkbox"> Done
-                </div>
+                <span id="video6-timer" class="timer">Time: 0s</span>
             </div>
         </div>
     </div>

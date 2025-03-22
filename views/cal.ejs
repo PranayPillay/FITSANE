@@ -3,45 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Column Layout</title>
+    <title>calesthenics</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            background: url('images/Land.jpg') no-repeat center center fixed;
+            background: url('/images/Land.jpg') no-repeat center center fixed;
             background-size: cover;
         }
-        /* .warm-up-sec
-        {
-            margin-top: 60px; ;
-            color:rgba(1, 10, 15, 0.543);
-            background-color: rgb(243, 152, 32);
-            border-radius: 30px;
-            box-shadow:0 4px 6px rgb(223, 223, 223);
-            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin-right:1000px;
-            margin-left: 200px;
-            text-align: center;
-            align-self:0px; 
-            
-            
-        }
-         */
         .video-container {
             margin-bottom: 20px;
-            margin-top: 80px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
         }
-
+        .video-container:hover {
+            transform: scale(1.05);
+        }
         video {
-            width: 100%; 
-            height: 50% ; 
-            border-radius: 15px; 
-            box-shadow: 0 4px 6px rgb(219, 18, 95); 
+            width: 100%;
+            max-width: 600px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgb(219, 18, 95);
         }
-
         .video-title {
             font-size: 18px;
             font-weight: bold;
@@ -50,72 +35,142 @@
             color: azure;
             background-color: orange;
             border-radius: 40px;
-            margin-left: 300px;
-            margin-right: 50px;
+            padding: 5px;
             box-shadow: 0 4px 6px rgb(255, 7, 218);
+            display: inline-block;
+        }
+        .controls-container {
+            margin-top: 10px;
+        }
+        .timer {
+            font-size: 16px;
+            margin-top: 5px;
+            color: white;
+            background-color: black;
+            padding: 5px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .btn-custom {
+            background-color: #ff7f50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin: 5px;
+        }
+        .btn-custom:hover {
+            background-color: #ff4500;
         }
     </style>
+    <script>
+        var timers = {};
+        
+        function togglePlayPause(id, button) {
+            var video = document.getElementById(id);
+            if (video.paused) {
+                video.play();
+                button.textContent = "Pause";
+            } else {
+                video.pause();
+                button.textContent = "Play";
+            }
+        }
+
+        function startTimer(id) {
+            var timerSpan = document.getElementById(id + "-timer");
+            if (!timers[id]) {
+                timers[id] = { seconds: 0, interval: null };
+            }
+            if (!timers[id].interval) {
+                timers[id].interval = setInterval(function () {
+                    timers[id].seconds++;
+                    timerSpan.textContent = "Time: " + timers[id].seconds + "s";
+                }, 1000);
+            }
+        }
+
+        function stopTimer(id) {
+            if (timers[id] && timers[id].interval) {
+                clearInterval(timers[id].interval);
+                timers[id].interval = null;
+            }
+        }
+    </script>
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarResponsive">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">FITSANE</a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="/home/<%= Email %>">Home</a></li>
-                    <li><a href="#workout">Workout</a></li>
-                    <li><a href="#nutrition">Nutrition</a></li>
-                    <li><a href="#rest">Rest Day</a></li>
-                </ul>
+                <a class="navbar-brand" href="/home/<%= Email %>">FITSANE</a>
             </div>
         </div>
     </nav>
-
-<!-- <div class="warm-up-sec">
-        <h1>homeworkout</h1>
-</div>       -->
-<div class="row">
-  <div class="col-md-4 col-sm-6 video-container">
-                <video src="/videos/warmup.mp4" controls></video>
-                <div class="video-title">warm up</div>
+    
+    <div class="container" style="margin-top: 80px;">
+        <div class="row">
+            <div class="col-md-12 video-container">
+                <video id="video1" src="/videos/warmup.mp4"></video>
+                <div class="video-title">Warm Up</div>
+                <div class="controls-container">
+                    <button class="btn-custom" onclick="togglePlayPause('video1', this)">Play</button>
+                    <button class="btn-custom" onclick="startTimer('video1')">Start Timer</button>
+                    <button class="btn-custom" onclick="stopTimer('video1')">Stop Timer</button>
+                    <input type="checkbox"> Done
+                </div>
+                <span id="video1-timer" class="timer">Time: 0s</span>
             </div>
-            <div class="col-md-4 col-sm-6 video-container">
-                <video src="/videos/skipping.mp4" controls></video>
-                <div class="video-title">skip</div>
-            </div>
-
-            <!-- Video 5 -->
-            <div class="col-md-4 col-sm-6 video-container">
-                <video src="/videos/running.mp4" controls></video>
-                <div class="video-title">running</div>
-            </div>
-       
-
-            <div class="col-md-4 col-sm-6 video-container">
-                <video src="/videos/squats.mp4" controls></video>
-                <div class="video-title">squats</div>
-            </div>
-
             
-            <div class="col-md-4 col-sm-6 video-container">
-                <video src="/videos/plank (2).mp4" controls></video>
-                <div class="video-title">plank</div>
+            <div class="col-md-12 video-container">
+                <video id="video2" src="/videos/plank.mp4"></video>
+                <div class="video-title">Skipping</div>
+                <div class="controls-container">
+                    <button class="btn-custom" onclick="togglePlayPause('video2', this)">Play</button>
+                    <button class="btn-custom" onclick="startTimer('video2')">Start Timer</button>
+                    <button class="btn-custom" onclick="stopTimer('video2')">Stop Timer</button>
+                    <input type="checkbox"> Done
+                </div>
+                <span id="video2-timer" class="timer">Time: 0s</span>
             </div>
 
-            
-            <div class="col-md-4 col-sm-6 video-container">
-                <video src="/videos/pushup.mp4" controls></video>
-                <div class="video-title">push ups</div>
+            <div class="col-md-12 video-container">
+                <video id="video4" src="/videos/pushup.mp4"></video>
+                <div class="video-title">Push-ups</div>
+                <div class="controls-container">
+                    <button class="btn-custom" onclick="togglePlayPause('video4', this)">Play</button>
+                    <button class="btn-custom" onclick="startTimer('video4')">Start Timer</button>
+                    <button class="btn-custom" onclick="stopTimer('video4')">Stop Timer</button>
+                    <input type="checkbox"> Done
+                </div>
+                <span id="video4-timer" class="timer">Time: 0s</span>
             </div>
-</div>
-        
-           
+
+            <div class="col-md-12 video-container">
+                <video id="video5" src="/videos/squats.mp4"></video>
+                <div class="video-title">Squats</div>
+                <div class="controls-container">
+                    <button class="btn-custom" onclick="togglePlayPause('video5', this)">Play</button>
+                    <button class="btn-custom" onclick="startTimer('video5')">Start Timer</button>
+                    <button class="btn-custom" onclick="stopTimer('video5')">Stop Timer</button>
+                    <input type="checkbox"> Done
+                </div>
+                <span id="video5-timer" class="timer">Time: 0s</span>
+            </div>
+
+            <div class="col-md-12 video-container">
+                <video id="video6" src="/videos/skipping.mp4"></video>
+                <div class="video-title">skipping</div>
+                <div class="controls-container">
+                    <button class="btn-custom" onclick="togglePlayPause('video6', this)">Play</button>
+                    <button class="btn-custom" onclick="startTimer('video6')">Start Timer</button>
+                    <button class="btn-custom" onclick="stopTimer('video6')">Stop Timer</button>
+                    <input type="checkbox"> Done
+                </div>
+                <span id="video6-timer" class="timer">Time: 0s</span>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

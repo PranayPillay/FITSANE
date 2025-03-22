@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="/css/adstyle.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="welcome">
+            <div class="heading">
+                <h1 class="word">Admin dashboard</h1>
+                
+                <h3 class="user">welcome <%= username %></h3>
+            </div>
+            <div class="logo"><img src="/images/boy.png" class="i"></div>
+            
+            
+                <ul>
+                    <div id="homeimg">
+                    <img src="/images/home.png" alt="home" id="himg">
+                </div>
+                    <li id="first">register user</li>
+                    <li id="second">remove user</li>
+                    <li>workouts</li>
+                    <li>nutrition</li>
+                    <li>analytics</li>
+                </ul>
+        </div>
+
+        <div class="cards" id="carddd">
+            <div class="card1">number of users
+                <div class="visits"><%= countuser %></div>
+            </div>
+            <div class="card2">total visits
+                <div class="visits"><%= visitors %></div>
+            </div>
+            <div class="card3">Logged users
+                <div class="visits"><%= activeuser %></div>
+            </div>
+        </div>
+
+        <div id="registeration">
+            <div class="form-group">
+                <form action="/auth/registeradminside/<%=visitors %>/<%= username %>/<%= countuser %>/<%= activeuser %>/<%= users %>" method="post">
+                <label for="name" >Full Name</label>
+            </div>
+                <input type="text" class="l" id="name" name="name" placeholder="Enter your full name" required>
+            
+            <div class="form-group">
+                <label for="Age">Age</label>
+            </div>
+                <input type="text" class="l" id="Age" name="Age" placeholder="enter your Age" required>
+            <div class="form-group">
+                Gender
+            </div>
+            <div class="form-group" id="wo">
+                <select name="Gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="Male" >Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                  </select>
+            </div>
+               
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+            </div>
+                <input type="password" class="l" id="password" name="password" placeholder="Enter your password" required>
+            
+            <div class="form-group">
+                <label for="Email">Email</label>
+            </div>
+                <input type="email" class="l" id="Email" name="Email" placeholder="Enter your email" required>
+            
+            <button class="register-btn"><span id="regis">Register</span></button>
+        </form>
+    </div>
+    <div id="removeUserSection">
+        <h2>Existing Users</h2>
+        <table border="1">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+            <% users.forEach(user => { %>
+                <tr>
+                    <td><%= user.name %></td>
+                    <td><%= user.Email %></td>
+                    <td>
+                        <form action="/auth/deleteuser/<%= user._id %>/<%=visitors %>/<%= username %>/<%= countuser %>/<%= activeuser %>/<%= users %>" method="POST" onsubmit="return confirm('Are you sure you want to delete this user?');">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }) %>
+        </table>
+    </div>
+
+    <script>
+        const doc=document.getElementById('registeration');
+        doc.style.display="none";
+        const cardis=document.getElementById('carddd');
+        const userdiv=document.getElementById('first');
+        userdiv.addEventListener('click',()=>
+        {
+            cardis.style.display="none";
+            doc.style.display="inline";
+        })
+        </script>
+
+
+
+
+<script>
+    const secondd=document.getElementById('second');
+const regToggle = document.getElementById('registerToggle');
+const remToggle = document.getElementById('removeToggle');
+const regForm = document.getElementById('registeration');
+const remSection = document.getElementById('removeUserSection');
+const cards = document.getElementById('carddd');
+
+remSection.style.display="none";
+
+secondd.addEventListener('click',()=>
+{
+    remSection.style.display="block"
+})
+
+regToggle.addEventListener('click', () => {
+    regForm.style.display = 'block';
+    remSection.style.display = 'none';
+    cards.style.display = 'none';
+});
+
+remToggle.addEventListener('click', () => {
+    remSection.style.display = 'block';
+    regForm.style.display = 'none';
+    cards.style.display = 'none';
+});
+</script>
+
+<script>
+    const hhh=document.getElementById('homeimg');
+    const htt=document.getElementById('carddd');
+    const docc=document.getElementById('registeration');
+    const remSectionn = document.getElementById('removeUserSection');
+    hhh.addEventListener('click',()=>
+    {
+
+        remSectionn.style.display="none"
+        docc.style.display="none"
+        htt.style.display="grid"
+        
+    })
+    const seconddd=document.getElementById('second');
+   seconddd.addEventListener('click',()=>
+{
+    htt.style.display="none"
+    docc.style.display="none"
+    remSectionn.style.display="block"
+    
+})
+
+const userdivv=document.getElementById('first');
+userdivv.addEventListener('click',()=>
+{
+    htt.style.display="none"
+    remSectionn.style.display="none"
+    docc.style.display="block"
+})
+
+
+
+</script>
+
+</body>
+
+</html>
