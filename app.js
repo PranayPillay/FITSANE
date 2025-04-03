@@ -53,6 +53,12 @@ app.get('/homeworkout/:slug',(req,res)=>
         
     })
 
+app.get('/members',(req,res)=>
+{
+res.render('members');
+});
+
+
 app.get('/home/:slug',(req,res)=>
 
 {

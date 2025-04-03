@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet the Developers - Fitsane</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            height: 500px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.4s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid #a777e3 ;
+            background: white;
+            display: block;
+            margin: 0 auto 15px;
+        }
+        .card h3 {
+            margin: 10px 0 5px;
+            font-size: 24px;
+            color: black;
+        }
+        .card p {
+            color: black;
+            margin: 5px 10px;
+            font-size: 16px;
+            padding: 0 10px;
+        }
+        .card:hover {
+            transform: scale(1.1);
+            z-index: 10;
+        }
+        .social-icons {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .social-icons a {
+            text-decoration: none;
+        }
+        .social-icons img {
+            width: 20px;
+            height: 20px;
+        }
+        h1 {
+            margin-bottom: 50px;
+            color: white;
+        }
+
+        .role{
+            font-weight: bold;
+            color: #a777e3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Meet the Developers</h1>
+    <div class="container">
+        <div class="card">
+            <img src="/images/imageme.jpg" alt="Pranay Pillay">
+            <h3>Pranay Pillay</h3>
+            <p><span class="role">Lead Developer</span></p>
+            <p>Lead full-stack Developer who built the backend using Node.js, Express.js, EJS, MongoDB, and various validation features. Also designed the frontend including homepage, register, login, BMI calculator, and review pages.</p>
+            <div class="social-icons">
+                <a href="#"><img src="/images/instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="/images/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="/images/facebook.png" alt="Facebook"></a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="/images/imagaeabhi.jpg" alt="Abhishek Sagar">
+            <h3>Abhishek Sagar</h3>
+            <p><span class="role">Frontend Developer</span></p>
+            <p>Frontend Developer who worked on and designed the landing page and three workout pages for different user preferences using HTML, CSS, and JavaScript. Also contributed to documentation.</p>
+            <div class="social-icons">
+                <a href="#"><img src="/images/instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="/images/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="/images/facebook.png" alt="Facebook"></a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="/images/imagetej.jpg" alt="Tejas Sooryavanshi">
+            <h3>Tejas Sooryavanshi</h3>
+            <p><span class="role">Frontend Developer</span></p>
+            <p>Frontend Developer who worked on the nutrition pages, developing three nutrition plans tailored to different body types using HTML, CSS, and JavaScript. Also prepared detailed nutrition diet plans.</p>
+            <div class="social-icons">
+                <a href="#"><img src="/images/instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="/images/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="/images/facebook.png" alt="Facebook"></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
